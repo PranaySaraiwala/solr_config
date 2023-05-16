@@ -1,0 +1,29 @@
+<updateProcessor class="solr.AddSchemaFieldsUpdateProcessorFactory" name="add-schema-fields">
+  <lst name="typeMapping">
+    <str name="valueClass">java.lang.String</str>
+    <str name="fieldType">string</str>
+    <!--lst name="copyField">
+    <str name="dest">*_str</str>
+    <int name="maxChars">256</int>
+    </lst-->
+    <!-- Use as default mapping instead of defaultFieldType -->
+    <bool name="default">true</bool>
+  </lst>
+  <lst name="typeMapping">
+    <str name="valueClass">java.lang.Boolean</str>
+    <str name="fieldType">string</str>
+  </lst>
+  <lst name="typeMapping">
+    <str name="valueClass">java.util.Date</str>
+    <str name="fieldType">string</str>
+  </lst>
+  <lst name="typeMapping">
+    <str name="valueClass">java.lang.Long</str>
+    <str name="valueClass">java.lang.Integer</str>
+    <str name="fieldType">string</str>
+  </lst>
+  <lst name="typeMapping">
+    <str name="valueClass">java.lang.Number</str>
+    <str name="fieldType">string</str>
+  </lst>
+</updateProcessor>

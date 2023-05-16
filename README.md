@@ -29,20 +29,21 @@
     Path = Home/solr/server/solr/configsets/_default/
     The updated "managed-schema" file is present in the repository.
 
-    Ideally we are adding the below lines in the schema file
-
-        <field name="UNIQUE_ID_D" type="string" indexed="true" stored="true" multiValued="false" />
+    Ideally we are adding the below lines in the schema file        
 
         <dynamicField name="*_S"  type="string"  indexed="true"  stored="true" />
         <dynamicField name="*_D"  type="pdouble"  indexed="true"  stored="true" />
         <dynamicField name="*_DT" type="pdate"  indexed="true"  stored="true" />
         <dynamicField name="*_T"  type="text_general"  indexed="true"  stored="true" />
 
+7. Update the UpdateProcessor Class in 'solrconfig.xml' to make all new created fields as "strings".
+    Code Block is shared in the repo.
 
-7. Ensuring that Solr is up. Upload a new config using this updated _default configset schema to your solr instance.
+
+8. Ensuring that Solr is up. Upload a new config using this updated _default configset schema to your solr instance.
 
     HOME/solr/bin/solr zk -z localhost:9983 -cmd upconfig -confname <NewConfig Name> -confdir HOME/solr/server/solr/configsets/_default/conf
 
     Above command assumes Zookeeper is to be locally started at specified port. make zk related changes to the command accordingly.
 
-8. Verify the updated Schema on the Solr UI by using "schema_designer" or by creating a collection out of it and checking its schema.
+9. Verify the updated Schema on the Solr UI by using "schema_designer" or by creating a collection out of it and checking its schema.
