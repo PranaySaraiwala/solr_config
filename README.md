@@ -37,7 +37,7 @@
         <dynamicField name="*_T"  type="text_general"  indexed="true"  stored="true" />
 
 7. Update the UpdateProcessor Class in 'solrconfig.xml' to make all new created fields as "strings".
-    Code Block is shared in the repo.
+    Updated Code Block solrconfig.xml [Line 1150-1178]
 
 
 8. Ensuring that Solr is up. Upload a new config using this updated _default configset schema to your solr instance.
